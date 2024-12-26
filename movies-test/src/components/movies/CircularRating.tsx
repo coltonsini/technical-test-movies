@@ -4,9 +4,11 @@ interface CircularRatingProps {
     rating: number;
     size?: number;
     strokeWidth?: number;
+    fontSize: number;
 }
 
-const CircularRating: React.FC<CircularRatingProps> = ({ rating, size = 100, strokeWidth = 10 }) => {
+const CircularRating: React.FC<CircularRatingProps> = ({ rating, size = 100, strokeWidth = 10, fontSize }) => {
+    const roundedRating = Math.round(rating);
     const radius = (size - strokeWidth) / 2;
     const circumference = 2 * Math.PI * radius;
     const offset = circumference - (rating / 100) * circumference;
@@ -48,11 +50,11 @@ const CircularRating: React.FC<CircularRatingProps> = ({ rating, size = 100, str
                 y="50%"
                 dominantBaseline="middle"
                 textAnchor="middle"
-                fontSize="9"
+                fontSize={fontSize}
                 fill="#fff"
                 transform={`rotate(90, ${size / 2}, ${size / 2})`}
             >
-                {rating}%
+                {roundedRating}%
             </text>
         </svg>
     );

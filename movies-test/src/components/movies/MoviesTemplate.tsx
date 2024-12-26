@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './moviesLayout.module.css';
 import CircularRating from './CircularRating';
+import formatDate from '@/utils/formatDate';
 
 interface MoviesTemplateProps {
     image: string;
@@ -13,15 +14,15 @@ interface MoviesTemplateProps {
 const MoviesTemplate: React.FC<MoviesTemplateProps> = ({ image, title, releaseDate, rating }) => {
     return (
         <article className={styles.movieTemplate}>
-            <Image src={image} alt={title} width={100} height={100} className={styles.movieTemplateImage}/>
+            <Image src={image} alt={title} width={355} height={233} className={styles.movieTemplateImage}/>
             <div className={styles.movieTemplateInfo}>
                 <h2 className={styles.movieTemplateTitle}>{title}</h2>
-                <p className={styles.movieTemplateRelease}>{releaseDate}</p>
+                <p className={styles.movieTemplateRelease}>{formatDate(releaseDate)}</p>
                 <div className={styles.movieTemplateActions}>	
                     <div className={styles.movieTemplateRating}>
                         <p>Rating</p>
                         <div>
-                            <CircularRating rating={rating} size={28} strokeWidth={1.5} />
+                            <CircularRating rating={rating} size={28} strokeWidth={1.5} fontSize={9} />
                         </div>
                     </div>
                     <div className={styles.movieTemplateFavorite}>

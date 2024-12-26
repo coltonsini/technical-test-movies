@@ -2,8 +2,16 @@
 
 .moviesLayout{
     display: flex;
+    flex-direction: column;
     width: 100dvw;
     overflow: hidden;
+}
+
+@media screen and (min-width: 1024px){
+    .moviesLayout{
+        flex-direction: row;
+    }
+    
 }
 
 .moviesContainer{
@@ -33,8 +41,15 @@
     flex-direction: row;
     width: 100%;
     gap: 32px;
-    overflow-x: auto;
     padding-bottom: 20px;
+    overflow-x: scroll;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+.moviesList::-webkit-scrollbar { 
+    display: none; 
 }
 
 
@@ -44,15 +59,17 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 200px;
+    max-width: 250px;
+    min-width: 250px;
 }
 
 .movieTemplateImage{
     width: 100%;
     height: 233px;
     object-fit: cover;
-    background-color: rgb(255, 255, 255);
+    object-position: top;
     border-radius: 8px 8px 0px 0px;
+    pointer-events: none;
 }
 
 .movieTemplateInfo{
@@ -63,6 +80,7 @@
     padding: 12px 8px;
     gap: 10px;
     align-items: center;
+    height: 100%;
 }
 
 .movieTemplateTitle{
@@ -127,4 +145,24 @@
     height: 28px;
     aspect-ratio: 1/1;
     cursor: pointer;
+}
+
+/* Movie banner component styles */
+
+.bannerMovies{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    min-height: 600px;
+    width: 100%;
+    background-color: linear-gradient(0deg, #666666 0% #000000 100%);
+}
+
+
+
+@media screen and (min-width: 1024px){
+    .bannerMovies{
+        min-height: 436px;
+    }
+    
 }
