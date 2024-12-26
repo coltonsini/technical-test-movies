@@ -1,0 +1,130 @@
+/* Movie Layout component styles */
+
+.moviesLayout{
+    display: flex;
+    width: 100dvw;
+    overflow: hidden;
+}
+
+.moviesContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--Gray500);
+    width: 100%;
+    padding: 28px 0px 28px 28px;
+}
+
+.moviesSection{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.moviesSection h3{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    color: var(--White);
+}
+
+.moviesList{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 32px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+
+/* Movie template styles */
+
+.movieTemplate{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+}
+
+.movieTemplateImage{
+    width: 100%;
+    height: 233px;
+    object-fit: cover;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px 8px 0px 0px;
+}
+
+.movieTemplateInfo{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorMain);
+    border-radius: 0px 0px 8px 8px;
+    padding: 12px 8px;
+    gap: 10px;
+    align-items: center;
+}
+
+.movieTemplateTitle{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--White);
+    font-family: var(--font-inter);
+    text-align: left;
+    align-self: flex-start;
+}
+
+.movieTemplateRelease{
+    font-size: 11px;
+    line-height: 10px;
+    font-weight: 400;
+    color: var(--White);
+    font-family: var(--font-inter);
+    text-align: left;
+    align-self: flex-start;
+}
+
+.movieTemplateActions{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.movieTemplateRating{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-inter);
+    gap: 12px;
+}
+
+.movieTemplateRating > p{
+    font-size: 11px;
+    line-height: 10px;
+    font-weight: 400;
+    color: var(--White);
+    font-family: var(--font-inter);
+}
+
+.movieTemplateFavorite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.movieTemplateFavorite > p{
+    font-size: 11px;
+    line-height: 10px;
+    font-weight: 400;
+    color: var(--White);
+    font-family: var(--font-inter);
+}
+
+.movieTemplateFavorite > svg{
+    width: 28px;
+    height: 28px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
