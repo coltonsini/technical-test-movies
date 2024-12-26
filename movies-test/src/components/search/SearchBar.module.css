@@ -1,0 +1,101 @@
+.searchBarContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--colorMain);
+    padding: 28px 12px 28px;
+}
+
+.searchBarInput{
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBarInput > label{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.searchBarInput > label > span{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--White);
+    font-family: var(--font-inter);
+}
+
+.searchBarInput > label > div{
+    display: flex;
+    background-color: var(--NeutralBlack);
+    gap: 8px;
+    padding: 12px 16px;
+}
+
+.searchBarInput > label > div > input{
+    background-color: transparent;
+    border: unset;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--White);
+    font-family: var(--font-inter);
+}
+
+.searchBarInput > label > div > input::placeholder{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--White);
+    font-family: var(--font-inter);
+}
+
+.searchBarInput > label > div > button{
+    width: 16px;
+    height: 16px;
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+}
+
+.searchBarInput > label > div > button > svg{
+    width: 16px;
+    height: 16px;
+}
+
+.searchBarSelect{
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBarSelect > label{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.searchBarSelect > label > span{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--White);
+    font-family: var(--font-inter);
+}
+
+.searchBarSelect > label > div{
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.searchBarSelect > label > div > select{
+    width: 100%;
+    background-color: var(--NeutralBlack);
+    border: unset;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--White);
+    font-family: var(--font-inter);
+    padding: 12px 16px;
+}
