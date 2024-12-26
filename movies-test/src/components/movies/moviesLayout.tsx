@@ -61,7 +61,7 @@ const MoviesLayout: React.FC = () => {
 
 	return (
 		<>
-			<Banner movieTitle="Kung fu panda" movieDescription="Hola mundo" imageUrl=""></Banner>
+			<Banner movieTitle="Kung fu panda" movieDescription="Hola mundo" imageUrl="https://placehold.co/600x400" rating={60}></Banner>
 			<section className={styles.moviesLayout}>
 				<SearchBar />
 				<div className={styles.moviesContainer}>
