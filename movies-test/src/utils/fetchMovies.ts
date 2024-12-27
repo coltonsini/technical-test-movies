@@ -1,7 +1,7 @@
 export const fetchMovies = async (url: string) => {
   const apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGM1NTdjOTIyZjAwOTZlOTJiMjYxZjNhMmU5ODUyZCIsIm5iZiI6MTczNTIyNTAxMy4xNDEsInN1YiI6IjY3NmQ2ZWI1YmYxMGZmMTk4NDYxNDc3MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1_zwN5Jb6_L0U8WI3-_2GizZ0yl_V7Jr63CueWIL4DE";
 
-  console.log("TMDB_API_KEY:", apiKey); // Verifica que la API key se está cargando
+  console.log("TMDB_API_KEY:", apiKey);
 
   if (!apiKey) {
     console.error("TMDB_API_KEY is not defined");

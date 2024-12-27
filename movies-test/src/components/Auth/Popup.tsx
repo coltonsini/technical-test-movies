@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './moviesLayout.css';
+import styles from './Popup.module.css';
 
 const UserAccountPopup: React.FC = () => {
     const [isSignUp, setIsSignUp] = useState<boolean>(true);
@@ -24,7 +24,7 @@ const UserAccountPopup: React.FC = () => {
     }, []);
 
     return (
-        <article className={`popup ${isVisible ? 'visible' : 'hidden'}`} ref={popupRef}>
+        <article className={`styles.popup ${isVisible ? 'visible' : 'hidden'}`} ref={popupRef}>
             <div>
                 <button onClick={handleClose}>
                     <svg></svg>

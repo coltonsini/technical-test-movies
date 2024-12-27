@@ -2,7 +2,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 12px 20px;
     background-color: var(--Black);
     color: #fff;
+}
+
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.headerContainer > svg{
+    width: 100%;
+    max-width: 150px;
+    height: 42px;
+}
+
+.headerContainer > ol{
+    display: flex;
+    gap: 20px;
+}
+
+.headerContainer > ol > li{
+    list-style: none;
+}
+
+.headerContainer > ol > li > a{
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font-inter);
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.headerLogin{
+    display: flex;
+}
+
+.headerLogin > svg{
+    width: 32px;
+    height: 32px;
+    background-color: red;
 }

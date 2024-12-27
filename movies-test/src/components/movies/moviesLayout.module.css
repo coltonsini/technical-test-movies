@@ -195,8 +195,8 @@
 }
 
 .bannerText > p{
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 18px;
     color: var(--White);
     font-weight: 700;
 }
@@ -218,6 +218,11 @@
 @media screen and (min-width: 1024px){
     .bannerMovies{
         min-height: 486px;
+    }
+
+    .bannerText > p{
+        font-size: 20px;
+        line-height: 24px;
     }
     
 }

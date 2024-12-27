@@ -1,14 +1,16 @@
 .searchBarContainer{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    width: 100%;
+    gap: 20px;
     background-color: var(--colorMain);
-    padding: 28px 0 28px 28px;
+    padding: 28px;
 }
 
 .searchBarInput{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .searchBarInput > label{
@@ -30,6 +32,7 @@
     background-color: var(--NeutralBlack);
     gap: 8px;
     padding: 12px 16px;
+    justify-content: space-between;
 }
 
 .searchBarInput > label > div > input{

@@ -7,6 +7,7 @@ import {fetchMovies} from "@/utils/fetchMovies";
 import useDraggable from "@/utils/dragElement";
 import SearchBar from "../search/SearchBar";
 import Banner from "./Banner";
+import UserAccountPopup from "../Auth/Popup";
 
 interface Movie {
 	id: number;
@@ -61,6 +62,7 @@ const MoviesLayout: React.FC = () => {
 
 	return (
 		<>
+		    <UserAccountPopup/>
 			<Banner movieTitle="Kung fu panda" movieDescription="Hola mundo" imageUrl="https://placehold.co/600x400" rating={60}></Banner>
 			<section className={styles.moviesLayout}>
 				<SearchBar />
