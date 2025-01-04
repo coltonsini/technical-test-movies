@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
-interface Genre {
-	id: number;
-	name: string;
+interface SearchBarProps {
+    onSearch: (query: string) => void;
 }
 
-const SearchBar: React.FC = () => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+
+    const [query, setQuery] = useState("");
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(e.target.value);
+    };
+
+    const handleSearch = () => {
+        onSearch(query);
+    };
+
 	return (
 		<aside className={styles.searchBarContainer}>
 			<div className={styles.searchBarInput}>
@@ -16,8 +26,14 @@ const SearchBar: React.FC = () => {
                     </span>
                     
 					<div>
-						<input type='text' id='KeyWords' placeholder='KeyWords' />
-                        <button>
+                        <input
+                            type='text'
+                            id='KeyWords'
+                            placeholder='KeyWords'
+                            value={query}
+                            onChange={handleInputChange}
+                        />
+                        <button onClick={handleSearch}>
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' viewBox='0 0 16 16' fill='none'>
                                 <g clip-path='url(#clip0_11230_905)'>
                                     <path
@@ -36,7 +52,7 @@ const SearchBar: React.FC = () => {
 					</div>
 				</label>
 			</div>
-			<div className={styles.searchBarSelect}>
+			{/* <div className={styles.searchBarSelect}>
 				<label htmlFor='Genres'>
                     <span>
                         Genres
@@ -44,15 +60,15 @@ const SearchBar: React.FC = () => {
 					<div>
 						<select name='Genres' id='Genres'>
 							<option value=''>Selecciona un género</option>
-							{/* {genres.map((genre) => (
+							{genres.map((genre) => (
                                 <option key={genre.id} value={genre.id}>
                                     {genre.name}
                                 </option>
-                            ))} */}
+                            ))}
 						</select>
 					</div>
 				</label>
-			</div>
+			</div> */}
 		</aside>
 	);
 };

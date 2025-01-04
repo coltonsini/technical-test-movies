@@ -1,4 +1,251 @@
 .popup{
+    display: none;
+    flex-direction: column;
+    overflow-y: scroll;
+    position: fixed;
+    width: 90dvw;
+    max-width: 1200px;
+    top: 5%;
+    left: 5%;
+    z-index: 999;
+    padding: 22px 20px;
+    backdrop-filter: blur(47px);
+    border-radius: 16px;
+}
+
+.visible {
     display: flex;
-    background-color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.popupForm{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.popupClose{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 6px;
+    border: unset;
+    background-color: unset;
+}
+
+.popupClose > span{
+    font-family: var(--font-inter);
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--White);
+}
+
+.popupFormContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    height: 100%;
+    padding: 0px 0px 50px;
+}
+
+.popupFormContent > span{
+    font-family: var(--font-inter);
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--White);
+}
+
+.popupFormButtons{
+    display: flex;
+    background-color: var(--NeutralBlack);
+    border-radius: 10px;
+}
+
+.popupFormButtons > button{
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 16px 30px;
+    border: none;
+    font-family: var(--font-inter);
+    color: var(--White);
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: 700;
+}
+
+.formButtonSignUp{
+    background-color: var(--Yellow500);
+    position: relative;
+    z-index: 2;
+}
+
+.formButtonLogIn{
+    background-color: var(--NeutralBlack);
+    position: relative;
+    z-index: 1;
+}
+
+.popupFormFields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 372px;
+    gap: 30px;
+}
+
+.popupFormFields > a{
+    background-color: var(--Yellow500);
+    color: var(--NeutralBlack);
+    padding: 14px 70px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-inter);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.popupFormFields > a:hover{
+    background-color: var(--White);
+}
+
+.popupFormFieldsLogIn{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.popupFormFieldsLogIn > span{
+    font-family: var(--font-inter);
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--White);
+}
+
+.popupFormFieldsLogIn > label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--White);
+    padding: 8px 10px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.popupFormFieldsLogIn > label > input{
+    width: 100%;
+    border: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: var(--font-inter);
+    font-weight: 400;
+}
+
+.popupFormFieldsLogIn > label > input::placeholder{
+    border: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: var(--font-inter);
+    font-weight: 400;
+}
+
+.popupFormFieldsLogIn > label > button{
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+.popupFormFieldsLogIn > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background-color: var(--Yellow500);
+    border: unset;
+    padding: 8px 10px;
+    font-size: 13px;
+    line-height: 16px;
+    font-family: var(--font-inter);
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.popupFormFieldsLogIn > button:hover{
+    background-color: var(--White);
+}
+
+.popupImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    background-color: var(--NeutralBlack);
+    border-radius: 0px 12px 12px 0px;
+    padding: 26px 30px 0px;
+}
+
+.popupImage > h3{
+    font-size: 30px;
+    line-height: 39px;
+    color: var(--White);
+    text-align: center;
+}
+
+.popupImage > span > p{
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--White);
+    text-align: center;
+}
+
+.popUpImages{
+    object-fit: contain;
+    object-position: bottom;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .popup{
+        flex-direction: row;
+        left: calc(50% - 600px);
+    }
+    
+    .popupForm{
+        width: 55%;
+    }
+
+    .popupImage{
+        width: 45%;
+    }
+
+    .popupFormFields > a{
+        padding: 14px 90px;
+    }
+
+    .popupFormFieldsLogIn > label{
+        padding: 12px 14px;
+    }
+
+    .popupFormFieldsLogIn > button{
+        padding: 12px 14px;
+    }
+    
 }

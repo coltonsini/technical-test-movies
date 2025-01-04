@@ -38,10 +38,12 @@
 
 .headerLogin{
     display: flex;
+    background-color: unset;
+    border: none;
+    cursor: pointer;
 }
 
 .headerLogin > svg{
     width: 32px;
     height: 32px;
-    background-color: red;
 }

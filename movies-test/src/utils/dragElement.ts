@@ -1,45 +1,50 @@
-import {useRef} from "react";
+import { useRef, useState } from 'react';
 
 const useDraggable = () => {
-	const ref = useRef<HTMLDivElement>(null);
-	const isDragging = useRef<boolean>(false);
-	const startX = useRef<number>(0);
-	const scrollLeft = useRef<number>(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
+  const [currentX, setCurrentX] = useState(0);
+  const [currentY, setCurrentY] = useState(0);
 
-	const handleMouseDown = (e: React.MouseEvent) => {
-		isDragging.current = true;
-		startX.current = e.pageX - (ref.current?.offsetLeft || 0);
-		scrollLeft.current = ref.current?.scrollLeft || 0;
-		ref.current?.classList.add("dragging");
-	};
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+    setStartY(e.clientY);
+    setCurrentX(e.clientX);
+    setCurrentY(e.clientY);
+  };
 
-	const handleMouseLeave = () => {
-		isDragging.current = false;
-		ref.current?.classList.remove("dragging");
-	};
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setCurrentX(e.clientX);
+    setCurrentY(e.clientY);
+    if (ref.current) {
+      ref.current.scrollLeft -= e.movementX;
+    }
+  };
 
-	const handleMouseUp = () => {
-		isDragging.current = false;
-		ref.current?.classList.remove("dragging");
-	};
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
-	const handleMouseMove = (e: React.MouseEvent) => {
-		if (!isDragging.current) return;
-		e.preventDefault();
-		const x = e.pageX - (ref.current?.offsetLeft || 0);
-		const walk = (x - startX.current) * 2;
-		if (ref.current) {
-			ref.current.scrollLeft = scrollLeft.current - walk;
-		}
-	};
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
 
-	return {
-		ref,
-		handleMouseDown,
-		handleMouseLeave,
-		handleMouseUp,
-		handleMouseMove,
-	};
+  const getDistanceMoved = () => {
+    return Math.sqrt(Math.pow(currentX - startX, 2) + Math.pow(currentY - startY, 2));
+  };
+
+  return {
+    ref,
+    handleMouseDown,
+    handleMouseMove,
+    handleMouseUp,
+    handleMouseLeave,
+    getDistanceMoved,
+  };
 };
 
 export default useDraggable;

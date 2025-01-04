@@ -13,6 +13,7 @@ interface BannerProps {
 const Banner: React.FC<BannerProps> = ({ movieTitle, movieDescription, imageUrl, rating }) => {
     return (
         <div className={styles.bannerMovies}>
+            <div className={styles.bannerElementBackground}></div>
             <Image src={imageUrl} alt={movieTitle} className={styles.bannerImage} width={1440} height={436}/>
             <div className={styles.bannerContent}>
                 <div className={styles.bannerText}>
